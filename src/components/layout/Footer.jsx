@@ -1,7 +1,15 @@
+import { Box } from "@mui/material"
+
 export const Footer = () => {
   return (
-    <footer>
+    <Box
+      sx={{
+        height: "70px",
+        backgroundColor: "primary.main",
+      }}
+      component={"footer"}
+    >
       <p>Dev Teste</p>
-    </footer>
-  )
+    </Box>
+  );
 }

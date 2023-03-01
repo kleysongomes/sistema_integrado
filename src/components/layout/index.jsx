@@ -1,20 +1,24 @@
-import { Header } from './Header.jsx'
-import { Footer } from './Footer.jsx'
+import { Header } from "./Header.jsx";
+import { Footer } from "./Footer.jsx";
 
-import Box from '@mui/material/Box';
+import { Box, styled } from "@mui/material";
+import { Stack } from "@mui/material";
+const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 export const Layout = ({ children }) => {
   return (
-    <Box
-      sx={{
-        width: '100%',
-        minHeight : '100vh',
-        backgroundColor: 'primary.dark',
+    <Stack
+      style={{
+        padding: "0",
+        height: "200vh",
       }}
     >
       <Header />
-      <main>{children}</main>
+      <Offset />
+      <Box flex={1} component={"main"}>
+        {children}
+      </Box>
       <Footer />
-    </Box>
-  )
-}
+    </Stack>
+  );
+};
